@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js Scene</title>
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .overlay nav {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div class="w-full h-screen">
+    <div class="w-full h-full relative">
+      <nav class="w-full flex justify-between items-center py-6 px-4 md:py-10 md:px-10 text-white font-sans">
+        <h3>Planets</h3>
+        <div class="flex gap-6">
+          <a class="text-sm" href="#">Home</a>
+          <a class="text-sm" href="#">About</a>
+          <a class="text-sm" href="#">Contact</a>
+        </div>
+      </nav>
+      <div class="absolute top-[12%] sm:top-[13%] md:top-[15%] left-1/2 -translate-x-1/2 text-center z-10 pointer-events-auto">
+        <div id="titleViewport" class="w-full h-[6.5em] sm:h-[7.5em] md:h-[9em] overflow-hidden">
+          <div id="titleStack" class="flex flex-col items-center">
+            <h1 class="m-0 text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-normal leading-none text-white font-belleza tracking-tighter text-glow">Earth</h1>
+            <h1 class="m-0 text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-normal leading-none text-white font-belleza tracking-tighter text-glow">Venus</h1>
+            <h1 class="m-0 text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-normal leading-none text-white font-belleza tracking-tighter text-glow">Volcanic</h1>
+            <h1 class="m-0 text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-normal leading-none text-white font-belleza tracking-tighter text-glow">Csilla</h1>
+          </div>
+        </div>
+        
+        <div id="paraViewport" class="w-full h-[2.2em] sm:h-[2.4em] md:h-[2.6em] overflow-hidden mt-1">
+          <div id="paraStack" class="flex flex-col items-center">
+            <p class="m-0 whitespace-normal leading-snug text-sm sm:text-base md:text-lg text-white font-['Gilroy'] text-glow">Earth, the blue jewel of the cosmos, where oceans, forests, and life flourish in fragile balance.</p>
+            <p class="m-0 whitespace-normal leading-snug text-sm sm:text-base md:text-lg text-white font-['Gilroy'] text-glow">Venus, a scorching world shrouded in thick clouds of acid, its surface blazing hotter than any other planet in our solar system.</p>
+            <p class="m-0 whitespace-normal leading-snug text-sm sm:text-base md:text-lg text-white font-['Gilroy'] text-glow">A volcanic planet, where molten rivers carve the land and skies glow with fire, embodying raw power and relentless creation.</p>
+            <p class="m-0 whitespace-normal leading-snug text-sm sm:text-base md:text-lg text-white font-['Gilroy'] text-glow">Csilla is the icy, remote homeworld of the Chiss species, hidden deep in the Unknown Regions and known for its harsh, frozen landscapes.</p>
+          </div>
+        </div>
+      <div class="w-40 sm:w-64 md:w-96 lg:w-[400px] h-[2px] sm:h-[3px] mx-auto mt-2 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
